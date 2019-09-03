@@ -1,0 +1,29 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "Variables/StringVariable")]
+public class StringVariable : ScriptableObject
+{
+    public string Value;
+
+    public void SetValue(string value)
+    {
+        Value = value;
+    }
+
+    public void SetValue(StringVariable value)
+    {
+        Value = value.Value;
+    }
+
+    public void ApplyChange(string amount)
+    {
+        Value += amount;
+    }
+
+    public void ApplyChange(StringVariable amount)
+    {
+        Value += amount.Value;
+    }
+}
